@@ -22,14 +22,10 @@ function App() {
           <Route path="/Dashboard/Content" element={<Content />} />
           <Route path="/Dashboard/Users" element={<Users  />} />
           <Route path="/Dashboard/AddUser" element={<Adduser  />} />
-
           <Route path="/Dashboard/Admins" element={<Admin  />} />
           <Route path="/Dashboard/AddAdmin" element={<Addadmin  />} />
           <Route path="/Dashboard/EditUser" element={<EditUser  />} />
-
           <Route path="/Dashboard/userRoles" element={<UserRoles />} />
-
-
         </Route>
       </Routes>
     </Router>

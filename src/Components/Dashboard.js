@@ -84,7 +84,7 @@ function DashboardMain() {
         <AppBar
           position="absolute"
           open={open}
-          style={{ backgroundColor: "#282828" }}
+          style={{ backgroundColor: "#000" }}
         >
           <Toolbar
             sx={{
@@ -117,7 +117,7 @@ function DashboardMain() {
             </IconButton>
           </Toolbar>
         </AppBar>
-        <Box sx={{ backgroundColor: "#282828" }}>
+        <Box sx={{ backgroundColor: "#000" }}>
           <Drawer variant="permanent" open={open}>
             {/* <Toolbar>
             <Grid container>
@@ -129,9 +129,9 @@ function DashboardMain() {
               </Grid>
             </Grid>
           </Toolbar> */}
-            <Box sx={{ backgroundColor: "#282828" }}>
+            <Box sx={{ backgroundColor: "#000" }}>
               <div className="d-flex justify-content-center pt-4 pb-4">
-                <img src={logo} width={"100px"} height={"100px"}></img>
+                <img src={logo} width={"100px"}></img>
               </div>
               <Divider/>
               <React.Fragment>

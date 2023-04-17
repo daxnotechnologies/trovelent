@@ -10,14 +10,41 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, styled, ThemeProvider, withStyles } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-import { InputAdornment } from "@mui/material";
+import { InputAdornment, inputLabelClasses } from "@mui/material";
 import { AccountCircle, Email, Lock } from "@mui/icons-material";
 import { ButtonStyles } from "./styles";
 import logo from "../Images/tvlon.png";
 
-const theme = createTheme();
+// const CssTextField = styled(TextField)({
+//   '& label.Mui-focused': {
+//     color: 'white',
+//   },
+//   '& .MuiFormLabel-root.Mui-disabled': {
+//     color: 'red',
+//   },
+//   '& .MuiInput-underline:after': {
+//     borderBottomColor: 'white',
+//   },
+//   '& .MuiOutlinedInput-root': {
+//     '& fieldset': {
+//       borderColor: 'white',
+//     },
+//     '&:hover fieldset': {
+//       borderColor: 'white',
+//     },
+//     '&.Mui-focused fieldset': {
+//       borderColor: '#DCBA57',
+//     },
+//   },
+// });
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -32,9 +59,10 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+
+      <Container component="main" maxWidth="xs" >
         <Box
           sx={{
             marginTop: 8,
@@ -60,10 +88,20 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              InputLabelProps={{
+                sx: {
+                  // set the color of the label when not shrinked
+                  color: "white",
+                  [`&.${inputLabelClasses.shrink}`]: {
+                    // set the color of the label when shrinked (usually when the TextField is focused)
+                    color: "white"
+                  }
+                }
+              }}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <Email />
+                    <Email color="#fff"/>
                   </InputAdornment>
                 ),
               }}
@@ -77,6 +115,16 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              InputLabelProps={{
+                sx: {
+                  // set the color of the label when not shrinked
+                  color: "white",
+                  [`&.${inputLabelClasses.shrink}`]: {
+                    // set the color of the label when shrinked (usually when the TextField is focused)
+                    color: "white"
+                  }
+                }
+              }}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -88,8 +136,9 @@ export default function SignIn() {
             <Grid container>
               <Grid item xs>
                 <FormControlLabel
-                  control={<Checkbox value="remember" />}
+                  control={<Checkbox value="remember"  color="primary"/>}
                   label="Remember me"
+                  
                 />
               </Grid>
               <Grid item>
@@ -113,6 +162,6 @@ export default function SignIn() {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
+</ThemeProvider>
   );
 }
