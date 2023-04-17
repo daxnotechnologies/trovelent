@@ -160,14 +160,14 @@ function DashboardMain() {
                     <ListItemText style={TextStyles} primary="Admins" />
                   </ListItemButton>
                 </Link>
-                <Link to="userRoles" underline="none">
+                {/* <Link to="userRoles" underline="none">
                   <ListItemButton>
                     <ListItemIcon>
                       <LockPersonIcon style={Iconstyle} />
                     </ListItemIcon>
                     <ListItemText style={TextStyles} primary="Role Permissions" />
                   </ListItemButton>
-                </Link>
+                </Link> */}
                 <Link to="/" underline="none">
                   <ListItemButton>
                     <ListItemIcon>

@@ -8,7 +8,6 @@ export default function UserRoles() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
   const columns = [
     { field: "id", headerName: "No", width: 50 },
     {

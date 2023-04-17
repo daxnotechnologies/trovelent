@@ -23,7 +23,7 @@ const SmallAvatar = styled(Avatar)(({ theme }) => ({
   border: `2px solid ${theme.palette.background.paper}`,
 }));
 
-export default function Adduser() {
+export default function EditUser() {
   const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
@@ -72,6 +72,24 @@ export default function Adduser() {
           label="Email"
           variant="outlined"
         />
+        <Autocomplete
+          className="mb-3"
+          fullWidth
+          multiple
+          size="small"
+          id="tags-standard"
+          options={userRoles}
+          getOptionLabel={(option) => option.title}
+          // defaultValue={[top100Films[13]]}
+          renderInput={(params) => (
+            <TextField
+              fullWidth
+              {...params}
+              label="User Roles"
+              placeholder="Select"
+            />
+          )}
+        />
       <FormControl fullWidth size="small" className="mb-3">
         <InputLabel id="demo-simple-select-standard-label">User Role</InputLabel>
         <Select
@@ -86,24 +104,6 @@ export default function Adduser() {
           <MenuItem value={20}>Customer</MenuItem>
         </Select>
       </FormControl>
-        <Autocomplete
-          className="mb-3"
-          fullWidth
-          multiple
-          size="small"
-          id="tags-standard"
-          options={userPermisions}
-          getOptionLabel={(option) => option.title}
-          // defaultValue={[top100Films[13]]}
-          renderInput={(params) => (
-            <TextField
-              fullWidth
-              {...params}
-              label="User Permisions"
-              placeholder="Select"
-            />
-          )}
-        />
         <TextField
           className="mb-3"
           fullWidth
@@ -200,7 +200,7 @@ export default function Adduser() {
           onClick={null}
           sx={ButtonStyles}
         >
-          Add User
+          Edit User
         </Button>
       </Card>
     </div>

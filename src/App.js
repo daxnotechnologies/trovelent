@@ -9,6 +9,7 @@ import Admin from "./Components/Admin";
 import UserRoles from "./Components/userRoles";
 import Adduser from "./Components/AddUser";
 import Addadmin from "./Components/AddAdmin";
+import EditUser from "./Components/EditUser";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 
           <Route path="/Dashboard/Admins" element={<Admin  />} />
           <Route path="/Dashboard/AddAdmin" element={<Addadmin  />} />
+          <Route path="/Dashboard/EditUser" element={<EditUser  />} />
 
           <Route path="/Dashboard/userRoles" element={<UserRoles />} />
 

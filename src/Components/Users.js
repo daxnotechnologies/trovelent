@@ -29,14 +29,20 @@ export default function Users() {
       editable: false,
     },
     {
-      field: "email",
-      headerName: "Email",
-      width: 200,
+      field: "role",
+      headerName: "User Role",
+      width: 120,
+      editable: false,
+    },
+    {
+      field: "number",
+      headerName: "Mobile Number",
+      width: 110,
       editable: false,
     },
     {
       field: "company",
-      headerName: "Company Name",
+      headerName: "Business Name",
       width: 150,
       editable: false,
     },
@@ -48,16 +54,17 @@ export default function Users() {
     },
     {
       field: "agentId",
-      headerName: "Agent ID",
+      headerName: "Business ID",
       width: 70,
       editable: false,
     },
     {
       field: "number",
-      headerName: "Number",
+      headerName: "Mobile Number",
       width: 110,
       editable: false,
     },
+
 
     {
       field: "status",
@@ -76,7 +83,12 @@ export default function Users() {
           <div className="row">
             <div className="col-3">
               <Tooltip title="Edit" placement="top">
-                <IconButton aria-label="delete">
+                <IconButton
+                  aria-label="edit"
+                  onClick={() => {
+                    navigate("/Dashboard/EditUser");
+                  }}
+                >
                   <EditIcon />
                 </IconButton>
               </Tooltip>
@@ -95,15 +107,96 @@ export default function Users() {
   ];
 
   const rows = [
-    { id: 1, name: "Snow", email: "Jon@gmail.com", company:"Daxno", agentName:"Clifford",agentId:"12", number: "357783478" },
-    { id: 2, name: "Lannister", email: "Cersei@gmail.com",company:"Daxno",agentName:"Clifford",agentId:"12", number: "427878273" },
-    { id: 3, name: "Lannister", email: "Jaime@gmail.com", company:"Daxno",agentName:"Clifford",agentId:"12", number: "45832877" },
-    { id: 4, name: "Stark", email: "Arya@gmail.com",company:"Daxno",agentName:"Clifford",agentId:"12", number: "16238892" },
-    { id: 5, name: "Targaryen", email: "Daenerys@gmail.com",company:"Daxno",agentName:"Clifford",agentId:"12", number: null },
-    { id: 6, name: "Melisandre", email: "Daenerys@gmail.com",company:"Daxno",agentName:"Clifford",agentId:"12", number: "1503787832" },
-    { id: 7, name: "Clifford", email: "Ferrara@gmail.com",company:"Daxno",agentName:"Clifford",agentId:"12", number: "44323283" },
-    { id: 8, name: "Frances", email: "Rossini@gmail.com",company:"Daxno",agentName:"Clifford",agentId:"12", number: "3643878734" },
-    { id: 9, name: "Roxie", email: "Harvey@gmail.com",company:"Daxno",agentName:"Clifford",agentId:"12", number: "6532787382" },
+    {
+      id: 1,
+      name: "Snow",
+      email: "Jon@gmail.com",
+      company: "Daxno",
+      role:"Customer",
+      agentName: "Clifford",
+      agentId: "12",
+      number: "357783478",
+    },
+    {
+      id: 2,
+      name: "Lannister",
+      email: "Cersei@gmail.com",
+      role:"Customer",
+      company: "Daxno",
+      agentName: "Clifford",
+      agentId: "12",
+      number: "427878273",
+    },
+    {
+      id: 3,
+      name: "Lannister",
+      role:"Admin",
+      email: "Jaime@gmail.com",
+      company: "Daxno",
+      agentName: "Clifford",
+      agentId: "12",
+      number: "45832877",
+    },
+    {
+      id: 4,
+      name: "Stark",
+      email: "Arya@gmail.com",
+      role:"Customer",
+      company: "Daxno",
+      agentName: "Clifford",
+      agentId: "12",
+      number: "16238892",
+    },
+    {
+      id: 5,
+      name: "Targaryen",
+      email: "Daenerys@gmail.com",
+      role:"Admin",
+      company: "Daxno",
+      agentName: "Clifford",
+      agentId: "12",
+      number: null,
+    },
+    {
+      id: 6,
+      name: "Melisandre",
+      email: "Daenerys@gmail.com",
+      role:"Customer",
+      company: "Daxno",
+      agentName: "Clifford",
+      agentId: "12",
+      number: "1503787832",
+    },
+    {
+      id: 7,
+      name: "Clifford",
+      email: "Ferrara@gmail.com",
+      role:"Admin",
+      company: "Daxno",
+      agentName: "Clifford",
+      agentId: "12",
+      number: "44323283",
+    },
+    {
+      id: 8,
+      name: "Frances",
+      email: "Rossini@gmail.com",
+      company: "Daxno",
+      role:"Admin",
+      agentName: "Clifford",
+      agentId: "12",
+      number: "3643878734",
+    },
+    {
+      id: 9,
+      name: "Roxie",
+      email: "Harvey@gmail.com",
+      role:"Customer",
+      company: "Daxno",
+      agentName: "Clifford",
+      agentId: "12",
+      number: "6532787382",
+    },
   ];
 
   return (
